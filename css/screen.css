@@ -2,16 +2,51 @@
 #FONTS
 \*------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
+/* Global colors */
+/* --global-color-primary-000: #e6f6ff;
+--global-color-primary-050: #b3e6ff;
+--global-color-primary-100: #80d6ff;
+--global-color-primary-200: #4dc6ff;
+--global-color-primary-300: #1ab6ff;
+--global-color-primary-400: #009cdb;
+--global-color-primary-500: #0082b2;
+--global-color-primary-600: #00688a;
+--global-color-primary-700: #004e61;
+--global-color-primary-800: #003438;
+--global-color-primary-900: #001a0f; */
+/* 
+--global-color-neutral-000: white;
+--global-color-neutral-050: #f7f7f7;
+--global-color-neutral-100: #e1e1e1;
+--global-color-neutral-200: #cfcfcf;
+--global-color-neutral-300: #b1b1b1;
+--global-color-neutral-400: #9e9e9e;
+--global-color-neutral-500: #7e7e7e;
+--global-color-neutral-600: #626262;
+--global-color-neutral-700: #515151;
+--global-color-neutral-800: #3b3b3b;
+--global-color-neutral-900: #222222; */
+
 :root {
-    /* colors */
+  /* colors */
+  --color-dark: #0f3557;
+  --color-light: #cce7ff;
 
-    /* opacity */
+  --color-front: var(--color-dark);
+  --color-back: var(--color-light);
+  font-feature-settings: 'zero' 1;
 
-    /* transitions */
+  /* opacity */
+  --muted-opacity: 0.6;
+  /* transitions */
+  --transtition-duration: 1.5s;
+  --transistion-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /*------------------------------------*\
@@ -25,18 +60,25 @@
 */
 
 html {
-    font-size: 100%;
-    line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: 'Work Sans', sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-front);
+  background-color: var(--color-back);
+}
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /*
@@ -47,15 +89,15 @@ html {
 */
 
 ::-moz-selection {
-    background: red;
-    color: white;
-    text-shadow: none;
+  background: red;
+  color: white;
+  text-shadow: none;
 }
 
 ::selection {
-    background: red;
-    color: white;
-    text-shadow: none;
+  background: red;
+  color: white;
+  text-shadow: none;
 }
 
 /*------------------------------------*\
@@ -69,8 +111,8 @@ Default markup for images to make them responsive
 */
 
 img {
-    max-width: 100%;
-    vertical-align: top;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 /*
@@ -82,34 +124,34 @@ img {
 h1,
 h2,
 h3 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 h1 {
-    font-size: 2.25rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-size: 2.25rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 h2 {
-    font-size: 2rem;
-    line-height: 1.25;
-    margin: 0 0 1.5rem;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 1.5rem;
 }
 
 h3 {
-    font-size: 1.5rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 h4,
 h5,
 h6 {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 0 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
 }
 
 p,
@@ -119,66 +161,66 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
 ul,
 ol {
-    padding-left: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 li ul,
 li ol {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 blockquote {
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 blockquote * {
-    font-size: inherit;
-    line-height: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: LightGrey;
-    margin: 0 0 1.5rem;
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 1.5rem;
 }
 
 a {
-    color: red;
-    outline-color: red;
-    outline-width: medium;
-    outline-offset: 2px;
+  color: red;
+  outline-color: red;
+  outline-width: medium;
+  outline-offset: 2px;
 }
 
 a:visited,
 a:active {
-    color: red;
+  color: red;
 }
 
 a:hover,
 a:focus {
-    color: red;
+  color: red;
 }
 
 label,
 input {
-    display: block;
+  display: block;
 }
 
 select {
-    width: 100%;
+  width: 100%;
 }
 
 input::placeholder {
-    color: gray;
+  color: gray;
 }
 
 /*------------------------------------*\
@@ -192,26 +234,26 @@ input::placeholder {
 */
 
 .o-button-reset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }
 
 /*
@@ -221,14 +263,14 @@ input::placeholder {
 */
 
 .o-hide-accessible {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /*------------------------------------*\
@@ -241,7 +283,16 @@ input::placeholder {
     Website main logo
 */
 
-.c-logo {}
+.c-logo {
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 
 /*
     Component: Sun
@@ -249,9 +300,14 @@ input::placeholder {
     The sun
 */
 
-.c-sun {}
+.c-sun {
+  height: 1.375rem;
+  width: 1.375rem;
+  fill: var(--color-front);
+}
 
-.c-logo .c-sun {}
+.c-logo .c-sun {
+}
 
 /*
     Component: App
@@ -259,11 +315,74 @@ input::placeholder {
     Main app wrapper
 */
 
+.c-app {
+  height: 100vh;
+  /* width: 100vw; */
+  max-width: 25rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.c-app__summary {
+  line-height: 2.5rem;
+  font-size: 1.75rem;
+}
+
 /*
     Component: Horizon
     ---
     Horizon with sun visualisation
 */
+.c-horizon__line {
+  width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 25rem;
+  border-top: 1px solid var(--color-front);
+  margin-bottom: 2rem;
+}
+
+.c-horizon__time {
+  line-height: 0.875rem;
+  font-size: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.c-horizon__sky-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  padding-top: 1.375rem;
+  padding-right: 2.5rem;
+}
+
+.c-horizon__sky {
+  position: relative;
+  height: 100%;
+}
+
+.c-horizon__sun::before {
+  content: attr(data-time);
+  line-height: 0.875rem;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.c-horizon__sun {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  transform: translateY(22px);
+}
 
 /*------------------------------------*\
 #UTILITIES
@@ -274,6 +393,10 @@ input::placeholder {
     Mute with opacity
 */
 
+.u-muted {
+  opacity: var(--muted-opacity);
+}
+
 /*------------------------------------*\
 #STATES
 \*------------------------------------*/
@@ -283,6 +406,11 @@ input::placeholder {
 */
 
 /* Night version: just switch the light and dark vars */
+/* 
+.is-night {
+  --color-front: var(--color-light);
+  --color-back: var(--color-dark);
+} */
 
 /*------------------------------------*\
 #MEDIA
@@ -296,72 +424,71 @@ input::placeholder {
 */
 
 @media print {
-
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
         http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
 
-    /*
+  /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
 
-    pre {
-        white-space: pre-wrap !important;
-    }
+  pre {
+    white-space: pre-wrap !important;
+  }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    /*
+  /*
     * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
     */
-    thead {
-        display: table-header-group;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
